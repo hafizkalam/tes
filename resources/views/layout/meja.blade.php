@@ -16,11 +16,14 @@
     </head>
     <body>
         <div class="container">
-            <div class="row mt-5">
+            <div class="row mt-4">
+                <a href="{{ url()->previous() }}" class="btn btn-danger ml-1 mb-2">Back</a>
+            </div>
+            <div class="row mt-4">
                 <form class="form-inline" action="{{ route('store') }}" method="POST">
                     @csrf
                     <div class="form-group mb-2">
-                      <input type="text" class="form-control" name="name" placeholder="Masukkan Nomor Meja">
+                      <input type="text" class="form-control" name="no_meja" placeholder="Masukkan Nomor Meja">
                     </div>
                     <button type="submit" class="btn btn-primary ml-1 mb-2">Create</button>
                   </form>
@@ -33,7 +36,8 @@
                       </tr>
                     </thead>
                     <tbody>
-                     @foreach ($data as $data)
+
+                     @foreach ($meja as $data)
                      <tr>
                         <td>{{ $data->no_meja }}</td>
                         <td>

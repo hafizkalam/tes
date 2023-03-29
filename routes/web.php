@@ -24,9 +24,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('login', [LoginController::class, 'index'])->name('login');
-
-// Route::get('/', [LayoutController::class, 'index'])->middleware('auth');
 Route::get('/adminmenu', [LayoutController::class, 'index'])->middleware('auth');
 
 Route::controller(LoginController::class)->group(function () {
@@ -43,7 +40,6 @@ Route::group(['middleware' => ['auth']], function () {
             Route::post('store', 'store')->name('store');
             Route::get('qrcode/{id}', 'generate')->name('generate');
         });
-        // Route::resource('meja', MejaController::class);
         Route::resource('penjualan', PenjualanController::class);
     });
 
@@ -52,13 +48,3 @@ Route::group(['middleware' => ['auth']], function () {
         Route::resource('transaksi', TransaksiController::class);
     });
 });
-
-// Route::controller(MejaController::class)->group(function () {
-//     Route::get('meja', 'index');
-//     Route::post('store', 'store')->name('store');
-//     Route::get('qrcode/{id}', 'generate')->name('generate');
-// });
-
-// Route::get('/', [MejaController::class, 'index']);
-// Route::post('/', [MejaController::class, 'store'])->name('store');
-// Route::get('qrcode/{id}', [MejaController::class, 'generate'])->name('generate');

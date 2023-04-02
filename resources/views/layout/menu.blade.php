@@ -1,52 +1,42 @@
-<li class="nav-item">
-    <a href="{{ url('home') }}" class="nav-link">
-        <i class="nav-icon fas fa-home"></i>
-        <p>
-            Home
-        </p>
-    </a>
-</li>
+@extends('layout.admin')
 
-@if ($user->level == 1)
-<li class="nav-item">
-    <a href="{{ url('tenant') }}" class="nav-link">
-        <i class="nav-icon fas fa-light fa-house-user"></i>
-        <p>
-            Tenant
-        </p>
-    </a>
-</li >
-<li class="nav-item">
-    <a href="{{ url('meja') }}" class="nav-link">
-        <i class="nav-icon fas fa-solid fa-qrcode"></i>
-        <p>
-            Meja
-        </p>
-    </a>
-</li >
-<li class="nav-item">
-    <a href="{{ url('penjualan') }}" class="nav-link">
-        <i class="nav-icon fas fa-solid fa-shopping-cart"></i>
-        <p>
-            Transaksi
-        </p>
-    </a>
-</li >
-@else ($user->level == 2)
-<li class="nav-item">
-    <a href="{{ url('menu') }}" class="nav-link">
-        <i class="nav-icon fas fa-solid fa-square-list"></i>
-        <p>
-            Menu
-        </p>
-    </a>
-</li >
-<li class="nav-item">
-    <a href="{{ url('transaksi') }}" class="nav-link">
-        <i class="nav-icon fas fa-shopping-cart"></i>
-        <p>
-            Transaksi
-        </p>
-    </a>
-</li >
-@endif
+@section('menu')
+<div class="container">
+    <div class="row mt-4">
+        {{-- <a href="{{ url()->previous() }}" class="btn btn-danger ml-1 mb-2">Back</a> --}}
+        <a href="{{ url('layout.create') }}" class="btn btn-primary ml-1 mb-2">Create</a>
+    </div>
+    <div class="row mt-4">
+        {{-- <form class="form-inline" action="{{ route('store') }}" method="POST">
+            @csrf
+
+          </form> --}}
+        <br>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Jenis</th>
+                <th scope="col">Keterangan</th>
+              </tr>
+            </thead>
+            <tbody>
+{{--
+             @foreach ($meja as $data)
+             <tr>
+                <td>{{ $data->no_meja }}</td>
+                <td>
+                    <a href="{{ route('generate',$data->id) }}" class="btn btn-primary">Generate</a>
+                </td>
+              </tr>
+             @endforeach --}}
+            </tbody>
+          </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+@endsection

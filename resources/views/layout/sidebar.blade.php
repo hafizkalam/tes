@@ -1,5 +1,5 @@
 <li class="nav-item">
-    <a href="{{ url('home') }}" class="nav-link">
+    <a href="{{ url('adminmenu') }}" class="nav-link">
         <i class="nav-icon fas fa-home"></i>
         <p>
             Home
@@ -32,9 +32,9 @@
         </p>
     </a>
 </li >
-@else ($user->level == 2)
+@elseif ($user->level == 2)
 <li class="nav-item">
-    <a href="{{ url('menu') }}" class="nav-link">
+    <a href="{{ url('adminmenu') }}" class="nav-link">
         <i class="nav-icon fas fa-solid fa-square-list"></i>
         <p>
             Menu

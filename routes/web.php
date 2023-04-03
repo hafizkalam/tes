@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MejaController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\Tenant;
 use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 

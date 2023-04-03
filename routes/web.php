@@ -42,7 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::group(['middleware' => ['cekUserLogin:2']], function () {
-        Route::resource('menu', MenuController::class);
-        Route::resource('transaksi', TransaksiController::class);
+        Route::resource('adminmenu/menu', MenuController::class);
+        Route::resource('adminmenu/transaksi', TransaksiController::class);
     });
 });

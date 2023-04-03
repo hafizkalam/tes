@@ -28,7 +28,7 @@
                     <form class="form-inline" action="{{ route('store') }}" method="POST">
                         @csrf
                             <div class="form-group mb-2">
-                                <input type="text" class="form-control" name="no_meja" placeholder="Masukkan Nomor Meja">
+                                <input type="text" class="form-control" name="meja" placeholder="Masukkan Nomor Meja">
                             </div>
                             <button type="submit" class="btn btn-primary ml-1 mb-2">Create</button>
                         </form>
@@ -165,14 +165,14 @@
                     </thead>
                     <tbody>
 
-                     @foreach ($meja as $data)
+                     {{-- @foreach ($meja as $data)
                      <tr>
                         <td>{{ $data->no_meja }}</td>
                         <td>
                             <a href="{{ route('generate',$data->id) }}" class="btn btn-primary">Generate</a>
                         </td>
                       </tr>
-                     @endforeach
+                     @endforeach --}}
                     </tbody>
                   </table>
             </div>

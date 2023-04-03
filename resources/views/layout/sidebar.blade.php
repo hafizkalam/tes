@@ -34,7 +34,7 @@
 </li >
 @elseif ($user->level == 2)
 <li class="nav-item">
-    <a href="{{ url('adminmenu') }}" class="nav-link">
+    <a href="{{ url('adminmenu/menu') }}" class="nav-link">
         <i class="nav-icon fas fa-solid fa-square-list"></i>
         <p>
             Menu
@@ -42,7 +42,7 @@
     </a>
 </li >
 <li class="nav-item">
-    <a href="{{ url('transaksi') }}" class="nav-link">
+    <a href="{{ url('adminmenu/transaksi') }}" class="nav-link">
         <i class="nav-icon fas fa-shopping-cart"></i>
         <p>
             Transaksi

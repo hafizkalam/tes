@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Meja;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Http\Request;
@@ -10,6 +11,9 @@ class MejaController extends Controller
 {
     public function index()
     {
+        return view('layout.meja')->with([
+            'user' => Auth::user(),
+        ]);
         // dd(User::all());
         // exit;
         $data = Meja::all();
